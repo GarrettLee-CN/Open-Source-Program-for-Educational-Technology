@@ -1,6 +1,6 @@
 from oset import file
+from oset import chineseword
 
-
-data = file.readfile('C:\\Users\\Administrator\\Desktop\\test.txt')
-for word in data:
-	print(word)
+s = "天津师范大学教育学部教育技术研究所"
+s = chineseword.cutword(s)
+print(s)
