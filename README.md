@@ -1,14 +1,16 @@
 # Open-Source-Program-for-Educational-Technology(V1.0)
 This project builds an open source program that will provide educators with simple, actionable Python functions.
 
-**Author：**Tan Li(Master Student of Educational Technology, Tianjin Normal University)
-**Email：**litanyouxiang@foxmail.com
+**Author:**Tan Li(Master Student of Educational Technology, Tianjin Normal University)
+
+**Email:**litanyouxiang@foxmail.com
 
 ## Class:File
 > This class is used to handle everything related to files.
 
 ### function : readfile()
 > This function is used to read the characters in the file and return the result.
+
 **The full syntax is:**
 ```python
 readfile(filename)
@@ -23,11 +25,30 @@ for word in data:
 	print(word)
 >>> 这是一个测试文本
 ```
+### function : readfilesname()
+> This function is used to read all file names in the folder and return a list of all file names.
+
+**The full syntax is:**
+```python
+readfilesname(filename)
+```
++ filename: is the file path.
+
+#### Example
+```python
+from oset import File
+filelist = File.readfilesname('C:\\Users\\Administrator\\Desktop\\images')
+for fl in filelist:
+	print(fl)
+```
+![Markdown](http://i2.tiimg.com/712071/2e23e1a498c3fc77.png)
+
 ## Class:Chineseword
 > This Class is used to deal with simple chinese.There 1 function:cutword()...
 
 ### function : cutword()
 >This function can cut the chinese words.
+
 **The full syntax is:**
 ```python
 cutword(sentence,*stopwordfile)

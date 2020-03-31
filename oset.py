@@ -4,14 +4,21 @@
 '''
 import pynlpir
 import codecs
+import os
 
-class file:
+class File:
+
 	def readfile(filename):
 		data = open(filename,'r',encoding = 'utf-8')
 		return data
 
-class chineseword:
-	def cutword(sentence,*stopwordfile):
+	def readfilesname(filename):
+		fileList = os.listdir(filename)
+		return fileList
+
+class Chineseword:
+	#
+	def cutword(sentence,**stopwordfile):
 		if stopwordfile == ():
 			pynlpir.open()
 			sentments=pynlpir.segment(sentence)
