@@ -1,23 +1,23 @@
-# Open-Source-Program-for-Educational-Technology(V1.0)
-This project builds an open source program that will provide educators with simple, actionable Python functions.
+# 教育技术开源库(V1.0)
+说明文档英文版请点击[英文版](README-EN.md)
+>该项目是以Python为基础，旨在为教育工作者提供一系列常用的处理功能——如词频统计，字符云等，减少教育研究者使用Python的难度。
 
-**Author:**Tan Li(Master Student of Educational Technology, Tianjin Normal University)
+**作者**:李坦(天津师范大学教育技术学硕士研究生)
+**Email**:litanyouxiang@foxmail.com
 
-**Email:**litanyouxiang@foxmail.com
+## File 类
+> 该类用于处理所有涉及到文件的操作
 
-## Class:File
-> This class is used to handle everything related to files.
+### 函数： readfile()
+> 该函数用于读取文件并返回出文件内的结果
 
-### function : readfile()
-> This function is used to read the characters in the file and return the result.
-
-**The full syntax is:**
+**完整结构**
 ```python
 readfile(filename)
 ```
-+ filename: is the file path, and the file is **encoded in UTF-8**.
++ filename: 您的文件路径, 并且文件路径以**utf-8**编码.
 
-#### Example
+#### 示例
 ```python
 from oset import File
 data = File.readfile('C:\\Users\\Administrator\\Desktop\\dict.txt')
@@ -25,45 +25,43 @@ for word in data:
 	print(word)
 >>> 这是一个测试文本
 ```
-### function : readfilesname()
-> This function is used to read all file names in the folder and return a list of all file names.
+### 函数: readfilesname()
+> 该函数主要是为了将一个文件夹内所有的文件名读取出来
 
-**The full syntax is:**
+**完整结构**
 ```python
 readfilesname(filename)
 ```
-+ filename: is the file path.
++ filename: 文件路径
 
-#### Example
+#### 示例
 ```python
 from oset import File
 filelist = File.readfilesname('C:\\Users\\Administrator\\Desktop\\images')
 for fl in filelist:
 	print(fl)
 ```
-![Markdown](http://i2.tiimg.com/712071/2e23e1a498c3fc77.png)
+![Markdown](http://i2.tiimg.com/712071/4276dd8f46835fd5.png)
 
-## Class:Chineseword
-> This Class is used to deal with simple chinese.There 1 function:cutword()...
+## Chineseword 类
+> 该类主要用于处理所有涉及到简体中文的任务，如分词，词频统计，字符云等。
 
-### function : cutword()
->This function can cut the chinese words.
+### 函数: cutword()
+>这个函数可以切分出文本中的中文词汇。在这个函数中，该函数已经内嵌了停用词表和教育领域专业分词词表。主要目的是减少研究人员在分词时的难度。（停用词表，如：'我'，'是'，'这'...;专业词汇表，如：'课程论'，'导师制'，'双轨制'...）
 
-**The full syntax is:**
+**完整结构**
 ```python
-cutword(sentence,*stopwordfile)
+cutword(sentence)
 ```
 + sentence: is the sentence that need to cut
-+ stopwordfile : Optional parameter,is the stopwords file path
-
-#### Example
+#### 示例
 ```python
 from oset import Chineseword
 s = "天津师范大学教育学部教育技术研究所"
 c = Chineseword.cutword(s)
 print(c)
->>> ['天津', '师范大学', '教育学', '部', '教育', '技术', '研究所']
+>>>[' 天津师范大学', ' 教育学部', ' 教育技术研究所']
 ```
 
-## About Me 
+## 关于我 
 Follow me:[CSDN](https://me.csdn.net/qq_32863549);[Personal Website](http://www.litan.tech)

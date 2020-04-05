@@ -1,6 +1,6 @@
 from oset import File
 from oset import Chineseword
 
-filelist = File.readfilesname('C:\\Users\\Administrator\\Desktop\\images')
-for fl in filelist:
-	print(fl)
+s = "天津师范大学教育学部教育技术研究所"
+c = Chineseword.cutword(s)
+print(c)
