@@ -43,6 +43,25 @@ for fl in filelist:
 ```
 ![Markdown](http://i2.tiimg.com/712071/4276dd8f46835fd5.png)
 
+### function : combfile()
+> This function is used to merge all the sub file contents under a folder and output them to the specified location
+
+**The full syntax is:**
+```python
+combfile(filepath,**outpath)
+```
++ filepath：is the file path
++ outpath：is the file path that have combined(Optinal)
+#### Example
+```python
+from oset import File
+File.combfile('C:\\Users\\Administrator\\Desktop\\test')
+```
+There are three sub files under the test file: one.txt, tjnu.txt, two.txt. The automatic merge generates a file named "combfile_Fin. TXT", in which the contents of the above sub files have been merged.
+
+![Markdown](http://i2.tiimg.com/712071/78416e216b0035cb.png)
+
+
 ## Class:Chineseword
 > This Class is used to deal with simple chinese.There 1 function:cutword()...
 

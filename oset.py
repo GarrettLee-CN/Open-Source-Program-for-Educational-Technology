@@ -11,17 +11,24 @@ class File:
 
 	def readfile(filename):
 		data = open(filename,'r',encoding = 'utf-8')
-		return data
+		return data.read()
 
 	def readfilesname(filename):
 		fileList = os.listdir(filename)
 		return fileList
+	
+	def  combfile(filepath,**outpath):
+		filelist = File.readfilesname(filepath)
+		if outpath != {}:
+			data = open(outpaht+'/combfile_Fin.txt','w+',encoding = 'utf-8')
+		else:
+			data = open(filepath+'/combfile_Fin.txt','w+',encoding = 'utf-8')
+		for file in filelist:
+			data.write(File.readfile(filepath+'/'+file)+'\n')
 
 class Chineseword:
 	def cutword(sentence):
 		sentments = jieba.cut(sentence, cut_all=False)
-		# for segment in sentments:
-		# 	all_sentence.append(segment[0])
 		userdicfile = os.path.join(root_path, 'data/userdic.txt')
 		jieba.load_userdict(userdicfile)
 		stopwordsfile = os.path.join(root_path, 'data/stop_words.txt')
@@ -34,6 +41,10 @@ class Chineseword:
 			else:
 				continue
 		return new_sentence
+
+	#def wordcloud():
+
+
 
 
 		

@@ -1,6 +1,6 @@
 # 教育技术开源库(V1.0)
 说明文档英文版请点击[英文版](README-EN.md)
->该项目是以Python为基础，旨在为教育工作者提供一系列常用的处理功能——如词频统计，字符云等，减少教育研究者使用Python的难度。
+>该项目是以Python为基础，旨在为教育工作者提供一系列常用的处理功能——如词频统计，字符云等，减少教育研究者使用Python的难度。计划V1.0版本维护时间为1年。
 
 **作者**:李坦(天津师范大学教育技术学硕士研究生)
 **Email**:litanyouxiang@foxmail.com
@@ -42,6 +42,25 @@ for fl in filelist:
 	print(fl)
 ```
 ![Markdown](http://i2.tiimg.com/712071/4276dd8f46835fd5.png)
+
+### 函数：combfile()
+> 该函数用于合并某一个文件夹下所有的子文件内容，并输出到指定位置
+
+**完整结构**
+```python
+combfile(filepath,**outpath)
+```
++ filepath：文件夹路径
++ outpath：合并文件输出位置（可选，若不选则输出到读取文件的位置）
+
+#### 示例
+```python
+from oset import File
+File.combfile('C:\\Users\\Administrator\\Desktop\\test')
+```
+test文件下存在三个子文件：one.txt,TJNU.txt,two.txt。自动合并产生一个文件名为“combfile_Fin.txt”的文件，该文件中已经上上述子文件内容合并进来。
+
+![Markdown](http://i1.fuimg.com/712071/defc699c1e8d878a.png)
 
 ## Chineseword 类
 > 该类主要用于处理所有涉及到简体中文的任务，如分词，词频统计，字符云等。
