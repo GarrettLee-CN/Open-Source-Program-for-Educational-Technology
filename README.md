@@ -59,8 +59,41 @@ from oset import File
 File.combfile('C:\\Users\\Administrator\\Desktop\\test')
 ```
 test文件下存在三个子文件：one.txt,TJNU.txt,two.txt。自动合并产生一个文件名为“combfile_Fin.txt”的文件，该文件中已经上上述子文件内容合并进来。
-
 ![Markdown](http://i1.fuimg.com/712071/defc699c1e8d878a.png)
+
+### 函数：repfilecont()
+> 该函数是替换文件中内容
+**完整结构**
+```python
+repfilecont(filepath,content,replacecontent)
+```
++ filepath：文件路径
++ content：需要替换的内容
++ replacecontent：被替换内容
+更详细说明参见：[[解决方案]Python批量替换文件中的内容](https://blog.csdn.net/qq_32863549/article/details/105416503)
+#### 示例
+```python
+from oset import File
+File.repfilecont('C:\\Users\\Administrator\\Desktop\\test','天津师范大学','天师大')
+```
+
+### 函数：repbatfilecont()
+> 该函数是批量替换文件夹中所有子文件中的内容
+**完整结构**
+```python
+repbatfilecont(filepath,content,replacecontent)
+```
++ filepath：文件夹路径
++ content：需要替换的内容
++ replacecontent：被替换内容
+更详细说明参见：[[解决方案]Python批量替换文件中的内容](https://blog.csdn.net/qq_32863549/article/details/105416503)
+#### 示例
+```python
+from oset import File
+File.repbatfilecont('C:\\Users\\Administrator\\Desktop\\test','天津师范大学','天师大')
+```
+
+![Markdown](http://i1.fuimg.com/712071/451b16ff6c186211.png)
 
 ## Chineseword 类
 > 该类主要用于处理所有涉及到简体中文的任务，如分词，词频统计，字符云等。
