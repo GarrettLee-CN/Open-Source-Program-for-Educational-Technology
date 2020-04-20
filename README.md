@@ -141,7 +141,7 @@ Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt
 from oset import Chineseword
 Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test')
 ```
-![img]((https://img-blog.csdnimg.cn/20200420162528934.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
+![img](https://img-blog.csdnimg.cn/20200420162528934.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
 
 #### 与该函数相关原创技术博客
 + [python读取某文件所处的文件位置](https://blog.csdn.net/qq_32863549/article/details/105637025)
