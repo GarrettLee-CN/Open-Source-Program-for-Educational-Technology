@@ -70,6 +70,7 @@ repfilecont(filepath,content,replacecontent)
 + filepath：文件路径
 + content：需要替换的内容
 + replacecontent：被替换内容
+
 更详细说明参见：[[解决方案]Python批量替换文件中的内容](https://blog.csdn.net/qq_32863549/article/details/105416503)
 #### 示例
 ```python
@@ -86,6 +87,7 @@ repbatfilecont(filepath,content,replacecontent)
 + filepath：文件夹路径
 + content：需要替换的内容
 + replacecontent：被替换内容
+
 更详细说明参见：[[解决方案]Python批量替换文件中的内容](https://blog.csdn.net/qq_32863549/article/details/105416503)
 #### 示例
 ```python
@@ -114,6 +116,36 @@ c = Chineseword.cutword(s)
 print(c)
 >>>[' 天津师范大学', ' 教育学部', ' 教育技术研究所']
 ```
+
+### 函数: wordcloud()
+>该函数用于将文档通过字符云的方式进行可视化展示，可以自动对单个文档或者多个文档进行字符云绘制。
+
+#### 完整结构
+```python
+wordcloud(filepath)
+```
++ filepath: 文件地址（可以是单个文件地址，也可以是存储多个文件的文件夹地址）
+#### 示例
+**文件夹下有如下文件**
+![img](https://img-blog.csdnimg.cn/20200420162838731.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
+
+```python
+#仅仅对单个txt文件进行可视化
+from oset import Chineseword
+Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt')
+```
+![img](https://img-blog.csdnimg.cn/20200420161246101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
+
+```python
+#对某个文件夹下所有文件进行批量可视化展示
+from oset import Chineseword
+Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test')
+```
+![img]((https://img-blog.csdnimg.cn/20200420162528934.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
+
+#### 与该函数相关原创技术博客
++ [python读取某文件所处的文件位置](https://blog.csdn.net/qq_32863549/article/details/105637025)
++ [原码解析：python实现文档字符云](https://blog.csdn.net/qq_32863549/article/details/105638407)
 
 ## 关于我 
 Follow me:[CSDN](https://me.csdn.net/qq_32863549);[Personal Website](http://www.litan.tech)

@@ -1,4 +1,7 @@
 from oset import File
 from oset import Chineseword
 
-File.repbatfilecont('C:\\Users\\Administrator\\Desktop\\test','天师大','天津师范大学')
+#print(Chineseword.cutword(File.readfile('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt')))
+#print(Chineseword.wordcount(Chineseword.cutword(File.readfile('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt'))))
+#Chineseword.wordcloud(Chineseword.wordcount(Chineseword.cutword(File.readfile('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt'))))
+Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test')

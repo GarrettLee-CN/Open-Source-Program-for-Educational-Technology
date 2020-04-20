@@ -7,11 +7,13 @@ import codecs
 import os
 from config import root_path
 import re
+from pyecharts import WordCloud
+
 
 class File:
 
 	def readfile(filename):#读取文件内容
-		data = open(filename,'r',encoding = 'utf-8')
+		data = open(filename,'r')
 		return data.read()
 
 	def readfilesname(filename):#读取文件夹下的子文件
@@ -21,9 +23,9 @@ class File:
 	def  combfile(filepath,**outpath):#将文件夹下子文件全部合并起来
 		filelist = File.readfilesname(filepath)
 		if outpath != {}:
-			data = open(outpaht+'/combfile_Fin.txt','w+',encoding = 'utf-8')
+			data = open(outpaht+'/combfile_Fin.txt','w+')
 		else:
-			data = open(filepath+'/combfile_Fin.txt','w+',encoding = 'utf-8')
+			data = open(filepath+'/combfile_Fin.txt','w+')
 		for file in filelist:
 			data.write(File.readfile(filepath+'/'+file)+'\n')
 
@@ -67,7 +69,36 @@ class Chineseword:
 				continue
 		return new_sentence
 
-	#def wordcloud():
+
+	def wordcount(sentence):
+		countlist = []
+		countdict = {}
+		for w in sentence:
+			if w in countlist:
+				countdict[w]+=1
+			else:
+				countlist.append(w)
+				countdict[w]=1
+		return countdict
+
+	def wordcloud(filepath):
+		try:
+			File.combfile(filepath)
+			sentence=File.readfile(filepath+'\\combfile_Fin.txt')
+		except:
+			sentence=File.readfile(filepath)
+			filepath = os.path.dirname(filepath)
+		sentence=Chineseword.cutword(sentence)
+		worddict=Chineseword.wordcount(sentence)
+		keylist,valuelist = worddict.keys(),worddict.values()
+		outputFile = filepath+'\\osetwordcloud.html'
+		cloud = WordCloud('wordcloud', width=1000, height=600)
+		cloud.add(
+			' ',keylist,valuelist,
+			shape='circle',
+			)
+		cloud.render(outputFile)
+
 
 
 
