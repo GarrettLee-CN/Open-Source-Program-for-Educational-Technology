@@ -170,6 +170,8 @@ from oset import Chineseword
 Chineseword.wordcount('C:\\Users\\Administrator\\Desktop\\test')
 ```
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200503125017814.png)
+#### 与该函数相关原创技术博客
++ [python实现文本词频统计并输出](https://blog.csdn.net/qq_32863549/article/details/105901951)
 
 ## 关于我 
 [CSDN博客](https://me.csdn.net/qq_32863549);[个人网站](http://www.litan.tech)
