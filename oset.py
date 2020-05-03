@@ -70,7 +70,7 @@ class Chineseword:
 		return new_sentence
 
 
-	def wordcount(sentence):
+	def sentencecount(sentence):
 		countlist = []
 		countdict = {}
 		for w in sentence:
@@ -81,6 +81,23 @@ class Chineseword:
 				countdict[w]=1
 		return countdict
 
+	def wordcount(filepath):
+		try:
+			File.combfile(filepath)
+			sentence=File.readfile(filepath+'\\combfile_Fin.txt')
+			os.remove(filepath+'\\combfile_Fin.txt')
+		except:
+			sentence=File.readfile(filepath)
+			filepath = os.path.dirname(filepath)
+		sentence=Chineseword.cutword(sentence)
+		worddict=Chineseword.sentencecount(sentence)
+		worddict=sorted(worddict.items(), key = lambda kv:(kv[1], kv[0]),reverse=True)
+		wordcount_csv = open(filepath+'/osetwordcount.csv','w+')
+		for key_value in worddict:
+			wordcount_csv.write(str(key_value)[1:-1]+'\n')
+		print("统计完毕，文件已经输出到:"+filepath+"/osetwordcount.csv文件中")
+
+
 	def wordcloud(filepath):
 		try:
 			File.combfile(filepath)
@@ -89,7 +106,7 @@ class Chineseword:
 			sentence=File.readfile(filepath)
 			filepath = os.path.dirname(filepath)
 		sentence=Chineseword.cutword(sentence)
-		worddict=Chineseword.wordcount(sentence)
+		worddict=Chineseword.sentencecount(sentence)
 		keylist,valuelist = worddict.keys(),worddict.values()
 		outputFile = filepath+'\\osetwordcloud.html'
 		cloud = WordCloud('wordcloud', width=1000, height=600)

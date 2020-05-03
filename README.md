@@ -147,5 +147,29 @@ Chineseword.wordcloud('C:\\Users\\Administrator\\Desktop\\test')
 + [python读取某文件所处的文件位置](https://blog.csdn.net/qq_32863549/article/details/105637025)
 + [原码解析：python实现文档字符云](https://blog.csdn.net/qq_32863549/article/details/105638407)
 
+### 函数: wordcount()
+> 该函数用于对文本中词频进行统计，既可以对单个文件进行词频统计，也可以对多个文件进行词频统计。
+
+#### 完整结构
+```python
+wordcount(filepath)
+```
++ filepath: 文件地址（可以是单个文件地址，也可以是存储多个文件的文件夹地址）
+#### 示例
+**文件夹下有如下结构:**
+![python实现文本词频统计](https://img-blog.csdnimg.cn/20200503122311932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODYzNTQ5,size_16,color_FFFFFF,t_70)
+```python
+#对单个文件进行词频统计
+from oset import Chineseword
+Chineseword.wordcount('C:\\Users\\Administrator\\Desktop\\test\\教育学部.txt')
+```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200503124215211.png)
+```python
+#对多个文件进行词频统计
+from oset import Chineseword
+Chineseword.wordcount('C:\\Users\\Administrator\\Desktop\\test')
+```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200503125017814.png)
+
 ## 关于我 
-Follow me:[CSDN](https://me.csdn.net/qq_32863549);[Personal Website](http://www.litan.tech)
+[CSDN博客](https://me.csdn.net/qq_32863549);[个人网站](http://www.litan.tech)
